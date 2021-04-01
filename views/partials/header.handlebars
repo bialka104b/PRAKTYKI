@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    {{#if styles }}
+    {{!-- Jeżeli styles są podane to wykonaj pętle for each dla każdego pliku css --}}
+    {{#each styles}}
+    {{!-- Pod this będą poszczególne elementy --}}
+    <link rel="stylesheet" href="/css/{{ this }}">
+    {{/each}}
+    {{/if}}
+</head>
+<body>

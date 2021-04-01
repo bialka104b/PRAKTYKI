@@ -1,0 +1,84 @@
+<div class="page-header">
+    <h2>{{ title }}</h2>
+</div>
+
+<div class="porownaj"></div>
+<form id="join-form" action="#">
+    <div class="form-group row">
+        <label class="col-xs-2 col-form-label" for="nickname">Podaj login</label>
+        <div class="col-xs-6">
+            <input id="nick" class="form-control" type="text">
+        </div>
+        <dic class="col-xs-4">
+            <button class="btn btn-primary">Dołącz</button>
+        </dic>
+    </div>
+</form>
+
+<form id="chat-form" action="#">
+
+    {{!-- TWORZE ZAKŁADKI --}}
+<div class="zakladki">
+    <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="kalkulator-tab" href="#kalkulator">Wszystkie</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="kalendarz-tab" data-toggle="tab" href="#kalendarz" role="tab"
+              aria-controls="kalendarz">Porownaj osoby</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="zadaniaBeta-tab" href="#zadaniaBeta" data-toggle="tab" role="tab"
+              aria-controls="zadaniaBeta" aria-selected="false">Edytuj dane</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="fort-tab" data-toggle="tab" href="#fort" aria-controls="fort"
+              aria-selected="false">Zobacz osobę</a>
+        </li>
+    </ul>
+</div>
+
+    <div id="chat-window" class="chat-window">
+        {{!-- <div class="chat-line">
+            <div class="chat-line-time">12:33</div>
+            <div class="chat-line-nick">Maciek</div>
+            <div class="chat-line-message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis, magnam.
+            </div>
+        </div>
+
+        <div class="chat-line">
+            <div class="chat-line-time">12:34</div>
+            <div class="chat-line-nick">Tomek</div>
+            <div class="chat-line-message">Lorem ipsum dolor sit amet.</div>
+        </div>
+
+        <div class="chat-line">
+            <div class="chat-line-time">12:34</div>
+            <div class="chat-line-status">Tomek opuścił czat.</div>
+        </div> --}}
+    </div>
+
+    <div class="form-group">
+        <textarea id="message" rows="7" class="form-control" placeholder="Twoja wiadomość..."></textarea>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary pull-xs-right">Wyślij</button>
+    </div>
+</form>
+
+{{!-- DO OBSŁUGI STATUSU ŻE KTOŚ DOŁĄCZYŁ DO CZATU --}}
+<script id="chat-status-template" type="text/x-handlebars-template">
+    <div class="chat-line">
+        <div class="chat-line-time">\{{time}}</div>
+        <div class="chat-line-status">\{{status}}</div>
+    </div>
+</script>
+
+{{!-- DO OBSŁUGI WYSYŁANYCH WIADOMOŚCI --}}
+<script id="chat-message-template" type="text/x-handlebars-template">
+    <div class="chat-line">
+        <div class="chat-line-time">\{{time}}</div>
+        <div class="chat-line-nick">\{{nick}}</div>
+        <div class="chat-line-message">\{{message}}</div>
+    </div>
+</script>

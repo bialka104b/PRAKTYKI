@@ -1,0 +1,10 @@
+{{#if scripts }}
+{{!-- Jeżeli scripts są podane to wykonaj pętle for each dla każdego skryptu --}}
+{{#each scripts}}
+{{!-- Pod this będą poszczególne elementy --}}
+<script src="/js/{{ this }}"></script>
+{{/each}}
+{{/if}}
+
+</body>
+</html>
